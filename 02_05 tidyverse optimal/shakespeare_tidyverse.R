@@ -7,8 +7,8 @@
 
 # SETUP -------------------------------------------------------------------
 
-library(checkpoint)
-checkpoint("2017-12-15")
+# library(checkpoint)
+# checkpoint("2017-12-15")
 
 library(rlang)
 library(tidyverse)
@@ -42,7 +42,9 @@ shakespeare.results <-
   as.tibble() %>%
   mutate("speaker_name" = apply(X = ., MARGIN = 1, FUN = save.speaker)) %>%
   mutate_all(str_trim)
-  
+
+# `as.tibble()` is deprecated as of tibble 2.0.0.
+# Please use `as_tibble()` instead.
 
 # UPDATE ------------------------------------------------------------------
 
